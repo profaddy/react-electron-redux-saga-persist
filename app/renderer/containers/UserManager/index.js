@@ -1,24 +1,24 @@
 import { connect } from 'react-redux';
 import { push } from 'connected-react-router';
 import { bindActionCreators } from 'redux';
-import LoggedIn from '../components/LoggedIn';
+import Login from '../components/Login';
 import userActions from '../actions/user';
 
 const mapStateToProps = (state) => {
-  return state;
+  
+  return {
+    state
+    // userDetails:state.userList
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  console.log(dispatch)
-  return{
-    onLogout: bindActionCreators(userActions.logout, dispatch),
-  }
-
+  // console.log(dispatch);
   // const user = bindActionCreators(userActions, dispatch);
   // return {
-  //   onLogout: (data) => {
-  //     user.logout(data);
-  //     dispatch(push('/'));
+  //   onLogin: (data) => {
+  //     user.login(data);
+  //     dispatch(push('/loggedin'));
   //   },
   // };
 };
@@ -26,4 +26,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(LoggedIn);
+)(UserManager);

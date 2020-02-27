@@ -10,7 +10,8 @@ export default class LoggedIn extends Component {
     this.props.onLogout({
       username: '',
       loggedIn: false,
-    });
+    })
+    // this.props.history.pushState()
   };
 
   render() {

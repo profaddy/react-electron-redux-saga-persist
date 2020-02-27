@@ -9,13 +9,16 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  const user = bindActionCreators(userActions, dispatch);
-  return {
-    onLogin: (data) => {
-      user.login(data);
-      dispatch(push('/loggedin'));
-    },
-  };
+  return{
+    onLogin: bindActionCreators(userActions.login, dispatch)
+  }
+  // const user = bindActionCreators(userActions, dispatch);
+  // return {
+  //   onLogin: (data) => {
+  //     user.login(data);
+  //     dispatch(push('/loggedin'));
+  //   },
+  // };
 };
 
 export default connect(

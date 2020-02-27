@@ -14,8 +14,13 @@ export default class Login extends Component {
     this.props.onLogin({
       username: this.state.username,
       loggedIn: true,
-    });
-  };
+    })
+  }
+    // .then(response => console.log("test succeeded"))
+    // this.props.onLogin({
+    //   username: this.state.username,
+    //   loggedIn: true,
+    // })
 
   handleChange = (e) => {
     this.setState({
